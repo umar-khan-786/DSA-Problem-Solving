@@ -15,18 +15,11 @@ Explanation:
 */
 int unsetRightmostSetBit(int n)
 {
-    int i = 1, m = n, mask = 1;
-    while (i != 0)
+    int m = n, mask = 1;
+    while ((m & 1) == 0)
     {
-        if (m & 1)
-        {
-            i = 0;
-        }
-        else
-        {
-            mask = (mask << 1);
-            m = (m >> 1);
-        }
+        mask = (mask << 1);
+        m = (m >> 1);
     }
     return (mask ^ n);
 }
