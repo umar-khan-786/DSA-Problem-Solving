@@ -18,6 +18,7 @@ Explanation: The binary representation of 11 is 1011, which is not symmetric.
 
 */
 
+// Approach - 1
 bool isPalindrome(int n)
 {
     unsigned long long int forward = 0;
@@ -32,17 +33,28 @@ bool isPalindrome(int n)
         i++;
         n = n >> 1;
     }
-    if (forward == reverse)
-        return 1;
-    return 0;
+
+    return forward == reverse;
 }
 
+// Approach - 2
+bool isPalindrome2(int n)
+{
+    unsigned rev = 0;
+    int k = n;
+    while (k)
+    {
+        rev = ((rev << 1) | (k & 1));
+        k = k >> 1;
+    }
+    return rev == n;
+}
 int main()
 {
     int n;
     cout << "Enter a number: ";
     cin >> n;
-    if (isPalindrome(n))
+    if (isPalindrome2(n))
     {
         cout << "Number is palindrom!!";
     }
