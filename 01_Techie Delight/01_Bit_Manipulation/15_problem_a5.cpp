@@ -1,6 +1,18 @@
 #include <iostream>
 using namespace std;
 
+/*
+
+Given a positive number, check if it is a power of 4 or not.
+
+Input: 256
+Output: true
+
+Input: 25
+Output: false
+
+*/
+
 // Approach - 1
 bool isPowerOf4(int n)
 {
