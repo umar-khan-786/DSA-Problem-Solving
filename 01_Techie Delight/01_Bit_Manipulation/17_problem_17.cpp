@@ -1,12 +1,11 @@
 #include <iostream>
 #include <bitset>
 using namespace std;
-#define INT_SIZE sizeof(int) * 8
 
 int reverseBits(int n)
 {
     int rev = 0;
-    int pos = INT_SIZE - 1;
+    int pos = 31;
     while (pos >= 0 && n)
     {
         if ((n & 1))
